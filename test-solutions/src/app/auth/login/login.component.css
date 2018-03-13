@@ -1,0 +1,13 @@
+.content {
+  width: 100%;
+  min-height: 700px;
+}
+
+mat-card.mat-card {
+  width: 350px;
+  height:400px
+}
+
+h5 {
+  margin: 10px
+}

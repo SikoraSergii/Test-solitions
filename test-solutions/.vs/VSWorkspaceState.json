@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\auth",
+    "\\src\\app\\layout",
+    "\\src\\app\\layout\\pages",
+    "\\src\\app\\layout\\pages\\users",
+    "\\src\\app\\shared"
+  ],
+  "SelectedNode": "\\src\\app\\shared\\material.module.ts",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,61 @@
+
+<div class="mat-typography" fxLayout="column" fxLayoutAlign="start">
+  <!--Filter-->
+  <div fxFlex="80px" fxLayout="row" fxLayoutAlign="center">
+    <mat-form-field [formGroup]="inputControl" fxFlex="550px" fxLayout="column" fxLayoutAlign="end">
+      <input placeholder="Search" matInput formControlName="filter" autocomplete="off" />
+    </mat-form-field>
+  </div>
+  <!--Table-->
+  <table fxFlexAlign="center">
+    <tr fxLayout="row">
+      <th (click)="onHeaderClick(1)" *ngIf="tableState[0].visible" [ngStyle]="{'color':tableState[0].color}"
+          fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span>Name</span>
+        <div fxFlex="15px">
+          <mat-icon class="arrow" *ngIf="sortState.column==1&&sortState.state==1">arrow_upward</mat-icon>
+          <mat-icon class="arrow" *ngIf="sortState.column==1&&sortState.state==2">arrow_downwardward</mat-icon>
+        </div>
+
+      </th>
+      <th (click)="onHeaderClick(2)" *ngIf="tableState[1].visible" [ngStyle]="{'color':tableState[1].color}"
+          fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span>Surname</span>
+        <div fxFlex="15px">
+          <mat-icon class="arrow" *ngIf="sortState.column==2&&sortState.state==1">arrow_upward</mat-icon>
+          <mat-icon class="arrow" *ngIf="sortState.column==2&&sortState.state==2">arrow_downwardward</mat-icon>
+        </div>
+      </th>
+      <th (click)="onHeaderClick(3)" *ngIf="tableState[2].visible" [ngStyle]="{'color':tableState[2].color}"
+          fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span>Age</span>
+        <div fxFlex="15px">
+          <mat-icon class="arrow" *ngIf="sortState.column==3&&sortState.state==1">arrow_upward</mat-icon>
+          <mat-icon class="arrow" *ngIf="sortState.column==3&&sortState.state==2">arrow_downwardward</mat-icon>
+        </div>
+      </th>
+      <th (click)="onHeaderClick(4)" *ngIf="tableState[3].visible" [ngStyle]="{'color':tableState[3].color}"
+          fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span>Active</span>
+        <div fxFlex="15px">
+          <mat-icon class="arrow" *ngIf="sortState.column==4&&sortState.state==1">arrow_upward</mat-icon>
+          <mat-icon class="arrow" *ngIf="sortState.column==4&&sortState.state==2">arrow_downwardward</mat-icon>
+        </div>
+      </th>
+    </tr>
+    <tr *ngFor="let user of users" (click)="onUserClick(user)" class="clickable" fxLayout="row">
+      <td *ngIf="tableState[0].visible" [ngStyle]="{'color':tableState[0].color}">
+        {{user.name}}
+      </td>
+      <td *ngIf="tableState[1].visible" [ngStyle]="{'color':tableState[1].color}">
+        {{user.surname}}
+      </td>
+      <td *ngIf="tableState[2].visible" [ngStyle]="{'color':tableState[2].color}">
+        {{user.age}}
+      </td>
+      <td (click)="onCheckboxColumnClick($event)" *ngIf="tableState[3].visible" [ngStyle]="{'color':tableState[3].color}">
+        <mat-checkbox [checked]="user.isActive" (change)="onCheckboxClick(user)"></mat-checkbox>
+      </td>
+    </tr>
+  </table>
+</div>

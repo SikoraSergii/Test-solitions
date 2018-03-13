@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+a {
+  text-decoration: none;
+  color:darkcyan;
+  font-style:normal;
+  font-weight:500;
+}
+table, th, td {
+  color:rgba(0,0,0,0.6);
+  border-bottom: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
+  border-collapse: collapse;
+}
+th, td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center
+}
+th {
+  width: 180px;
+}
+td {
+  width: 174px;
+}

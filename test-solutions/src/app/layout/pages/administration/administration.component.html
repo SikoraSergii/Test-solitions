@@ -1,0 +1,26 @@
+<div fxlayout="column" fxLayoutAlign="center" class="mat-typography">
+  <table>
+    <tr>
+      <th>Column</th>
+      <th>Color</th>
+      <th>Visible</th>
+    </tr>
+    <tr *ngFor="let column of columns; let i = index">
+      <td>
+      {{column.name}}
+      </td>
+      <td>
+        <mat-form-field>
+          <mat-select  [(value)]="column.color" (selectionChange)="onSelect($event.value, i)">
+            <mat-option *ngFor="let color of colors" value ="{{color}}">
+              {{ color }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-checkbox [checked]="column.visible" (change)="onCheckboxClick(i)"></mat-checkbox>
+      </td>
+    </tr>
+  </table>
+</div>

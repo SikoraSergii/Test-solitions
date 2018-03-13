@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="center" class="mat-typography">
+  <div fxFlex="960px" fxLayout="row" fxLayoutAlign="space-between stretch">
+    <div fxFlex="250px" fxLayout="row" fxLayoutAlign="start center">
+      <mat-icon class="group-icon">group</mat-icon>
+    </div>
+    <mat-nav-list fxLayout="row">
+      <mat-list-item routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a routerLink="/users">All users</a>
+      </mat-list-item>
+      <mat-list-item routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" fxLayout="column" fxLayoutAlign="start">
+        <a routerLink="/users/active">Active users</a>
+      </mat-list-item>
+      <mat-list-item routerLinkActive="active">
+        <a routerLink="/administration">Admin page</a>
+      </mat-list-item>
+
+    </mat-nav-list>
+    
+    <div fxLayout="row" fxFlex="250px" fxLayoutAlign="end center" >
+      <div *ngIf="searchInfo.active"
+           fxFlex="180px" fxLayout="row" fxLayoutGap="10px">
+        <mat-icon class="search-icon">find_in_page</mat-icon>
+        <p class="results">Found {{searchInfo.results}} user(s)</p>
+      </div>
+      <mat-icon class="logout-icon clickable" (click)="onLogout()">exit_to_app</mat-icon>
+    </div>
+  </div>
+  
+</mat-toolbar>

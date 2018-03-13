@@ -1,0 +1,23 @@
+<div class="content" fxFlex fxLayout="column" fxLayoutAlign="center center">
+  <mat-card fxLayout="column" fxLayoutAlign="start">
+    <mat-card-title>
+      <h5>Registration</h5>
+    </mat-card-title>
+    <form [formGroup]="registrationForm" fxLayout="column" fxLayoutAlign="start" fxLayoutGap="15px">
+      <div fxFlex="190px" fxLayout="column" fxLayoutAlign="start">
+        <!--Mail-->
+        <mat-form-field>
+          <input placeholder="Email" matInput formControlName="email" />
+          <mat-error>{{getMailError()}}</mat-error>
+        </mat-form-field>
+        <!--Password-->
+        <mat-form-field>
+          <input type="password" placeholder="Password (do not use your real one)" matInput formControlName="password" />
+          <mat-error>{{getPasswordError()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <i fxFlexAlign="center" class="caption">Have an account? <a routerLink="/login"> Login</a></i>
+      <button mat-raised-button color="primary" (click)="onRegister()">Register</button>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,14 @@
+<div fxflex fxLayoutAlign="center center">
+  <mat-card *ngIf="user" fxLayout="column" fxLayoutAlign="start center">
+    <mat-card-title>
+      {{user.name}} {{user.surname}}
+    </mat-card-title>
+    <div fxFlexAlign="start">
+      <p>Age: {{user.age}}</p>
+      <p>Active: <span *ngIf="user.isActive; then yes; else no"></span></p>
+      <ng-template #yes>Yes</ng-template>
+      <ng-template #no>No</ng-template>
+    </div>
+
+  </mat-card>
+</div>
